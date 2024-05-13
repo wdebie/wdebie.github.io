@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>school on Willem&#39;s Portfolio</title>
+    <link>/categories/school/</link>
+    <description>Recent content in school on Willem&#39;s Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 May 2024 23:00:00 +0000</lastBuildDate><atom:link href="/categories/school/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Tracker (PHP Project)</title>
+      <link>/projects/memorytracker/</link>
+      <pubDate>Wed, 01 May 2024 23:00:00 +0000</pubDate>
+      
+      <guid>/projects/memorytracker/</guid>
+      <description>Category Details Subject Thomas More PHP Project. Who Willem De Bie, Maciej Chuchra, Pierina Sabina Lopez Monserrate, Egemen Alkan, German Novykov, Stjepan Raguz, Muhammad Zubair What A PHP web application for patients of dementia Where Thomas More Why To learn PHP, teamwork and developing a professional web app. View Memory Tracker here: https://project.trackermemory.be/. Realizations Power of Laravel: Working with PHP Laravel, I appreciated its elegance and power. Its MVC architecture, security features, and database migration made the development process smoother and more efficient.</description>
+    </item>
+    
+    <item>
+      <title>LAMP Stack (Linux Webservices)</title>
+      <link>/projects/milestone2/</link>
+      <pubDate>Sat, 04 Nov 2023 23:00:00 +0000</pubDate>
+      
+      <guid>/projects/milestone2/</guid>
+      <description>Category Details Subject A LAMP stack (Course: Linux Webservices) Who Willem De Bie What A simple web application hosted with Lighttpd, connected to a NodeJS API which interacts with a MongoDB database. Where Thomas More - Linux Webservices Why To learn webservices and secure, containerized stacks. Download my research paper about this here. Realizations Note: everything I realized with this project is documented thoroughly in my research paper.
+Flexibility of the LAMP Stack: The LAMP stack is not limited to its traditional components (Linux, Apache, MySQL, PHP).</description>
+    </item>
+    
+  </channel>
+</rss>
