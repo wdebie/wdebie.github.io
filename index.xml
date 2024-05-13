@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Willem De Bie&#39; Website on Willem&#39;s Portfolio</title>
+    <link>/</link>
+    <description>Recent content in Willem De Bie&#39; Website on Willem&#39;s Portfolio</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Oct 2017 15:26:15 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homelab</title>
+      <link>/projects/wlinator/</link>
+      <pubDate>Wed, 01 May 2024 23:00:00 +0000</pubDate>
+      
+      <guid>/projects/wlinator/</guid>
+      <description>Category Details Subject Personal homelab server Who Willem De Bie What A Raspberry Pi-based server hosting various services (DietPi OS) Where My home Why To learn, experiment and self-host services. Realizations I use my Raspberry Pi 4 to self-host a number of different software applications.
+1. My Discord bot My Discord bot written in Python is hosted on this homelab so that it runs 24/7 and everyone can always use it.</description>
+    </item>
+    
+    <item>
+      <title>Memory Tracker (PHP Project)</title>
+      <link>/projects/memorytracker/</link>
+      <pubDate>Wed, 01 May 2024 23:00:00 +0000</pubDate>
+      
+      <guid>/projects/memorytracker/</guid>
+      <description>Category Details Subject Thomas More PHP Project. Who Willem De Bie, Maciej Chuchra, Pierina Sabina Lopez Monserrate, Egemen Alkan, German Novykov, Stjepan Raguz, Muhammad Zubair What A PHP web application for patients of dementia Where Thomas More Why To learn PHP, teamwork and developing a professional web app. View Memory Tracker here: https://project.trackermemory.be/. Realizations Power of Laravel: Working with PHP Laravel, I appreciated its elegance and power. Its MVC architecture, security features, and database migration made the development process smoother and more efficient.</description>
+    </item>
+    
+    <item>
+      <title>LAMP Stack (Linux Webservices)</title>
+      <link>/projects/milestone2/</link>
+      <pubDate>Sat, 04 Nov 2023 23:00:00 +0000</pubDate>
+      
+      <guid>/projects/milestone2/</guid>
+      <description>Category Details Subject A LAMP stack (Course: Linux Webservices) Who Willem De Bie What A simple web application hosted with Lighttpd, connected to a NodeJS API which interacts with a MongoDB database. Where Thomas More - Linux Webservices Why To learn webservices and secure, containerized stacks. Download my research paper about this here. Realizations Note: everything I realized with this project is documented thoroughly in my research paper.
+Flexibility of the LAMP Stack: The LAMP stack is not limited to its traditional components (Linux, Apache, MySQL, PHP).</description>
+    </item>
+    
+    <item>
+      <title>Racu</title>
+      <link>/projects/racu/</link>
+      <pubDate>Fri, 04 Nov 2022 23:00:00 +0000</pubDate>
+      
+      <guid>/projects/racu/</guid>
+      <description>Category Details Subject My Discord bot: Racu Who Willem De Bie What A Discord bot with mini-games, a leveling system, administration, &amp;hellip; Where Discord, and the docs wiki Why To learn Python and the MariaDB database server. Realizations Discord Bot A Discord bot is an automated program that operates within the Discord platform. It can perform a variety of tasks, from moderating a server to playing music, and much more.</description>
+    </item>
+    
+  </channel>
+</rss>
