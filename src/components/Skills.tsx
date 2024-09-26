@@ -3,12 +3,11 @@ export function Skills() {
     "Python", "Linux", "Docker", "PHP", "Kubernetes", "Git", "Laravel",
     "Vagrant", "MS Office", "Java", "C#", "React", "Angular", "Mobile Development",
     "Node.js", "TypeScript", "SQL", "NoSQL", "RESTful APIs", "GraphQL",
-    "AWS", "Azure", "CI/CD", "Agile Methodologies", "Scrum", "Test-Driven Development",
+    "AWS", "Azure", "CI/CD", "Agile Methodologies", "SCRUM",
     "Microservices", "Serverless Architecture", "DevOps", "System Administration",
-    "Network Security", "Data Analysis", "Machine Learning", "IoT",
-    "Bash Scripting", "PowerShell", "Virtualization", "Containerization",
-    "Web Accessibility", "SEO", "Performance Optimization", "Responsive Design",
-    "UX/UI Design", "Version Control", "Code Review", "Technical Writing"
+    "Network Security", "Data Analysis", "Machine Learning",
+    "Bash Scripting", "PowerShell", "Virtualization", "Responsive Design",
+    "UX/UI Design","Technical Writing"
   ]
 
   return (
