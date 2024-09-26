@@ -1,6 +1,8 @@
-# Personal Portfolio Website
+# Willem De Bie - Personal Portfolio
 
-This is my personal portfolio website, built using React, TypeScript, and Vite. It provides an overview of my projects, skills, and experience as a developer.
+This is my personal portfolio website, built using React, TypeScript, and Vite. It provides an overview of his projects, skills, and experience as a developer.
+
+Preview: https://wdebie.github.io/
 
 ## Features
 
