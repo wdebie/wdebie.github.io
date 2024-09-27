@@ -14,28 +14,31 @@ type SkillCategory = {
 
 const skillCategories: SkillCategory[] = [
   {
-    name: "Programming Languages",
+    name: "Programming",
     icon: <Code size={20} />,
     skills: [
+    { name: "Python", icon: <Code size={16} /> },
       { name: "JavaScript", icon: <Code size={16} /> },
       { name: "TypeScript", icon: <Code size={16} /> },
-      { name: "Python", icon: <Code size={16} /> },
       { name: "Java", icon: <Code size={16} /> },
+      { name: "Dart", icon: <Code size={16} /> },
       { name: "C#", icon: <Code size={16} /> },
-      { name: "SQL", icon: <Database size={16} /> },
     ]
   },
   {
-    name: "Web Technologies",
+    name: "Web & App",
     icon: <Globe size={20} />,
     skills: [
-      { name: "HTML5", icon: <Globe size={16} /> },
-      { name: "CSS3", icon: <Globe size={16} /> },
+      { name: "Angular", icon: <Globe size={16} /> },
       { name: "React", icon: <Globe size={16} /> },
+      { name: "React Native", icon: <Globe size={16} /> },
+      { name: "Flutter", icon: <Globe size={16} /> },
       { name: "Next.js", icon: <Globe size={16} /> },
       { name: "Node.js", icon: <Globe size={16} /> },
       { name: "Express.js", icon: <Globe size={16} /> },
       { name: "RESTful APIs", icon: <Globe size={16} /> },
+      { name: "HTML5", icon: <Globe size={16} /> },
+      { name: "CSS3", icon: <Globe size={16} /> },
     ]
   },
   {
@@ -45,7 +48,10 @@ const skillCategories: SkillCategory[] = [
       { name: "MongoDB", icon: <Database size={16} /> },
       { name: "PostgreSQL", icon: <Database size={16} /> },
       { name: "MySQL", icon: <Database size={16} /> },
+      { name: "MongoDB", icon: <Database size={16} /> },
       { name: "Firebase", icon: <Database size={16} /> },
+      { name: "Supabase", icon: <Database size={16} /> },
+      { name: "SQLite", icon: <Database size={16} /> },
     ]
   },
   {
@@ -53,22 +59,22 @@ const skillCategories: SkillCategory[] = [
     icon: <Wrench size={20} />,
     skills: [
       { name: "Git", icon: <Wrench size={16} /> },
-      { name: "GitHub", icon: <Wrench size={16} /> },
-      { name: "VS Code", icon: <Wrench size={16} /> },
       { name: "Docker", icon: <Wrench size={16} /> },
+      { name: "Poetry", icon: <Wrench size={16} /> },
       { name: "AWS", icon: <Wrench size={16} /> },
       { name: "Heroku", icon: <Wrench size={16} /> },
-      { name: "Vercel", icon: <Wrench size={16} /> },
     ]
   },
   {
-    name: "Other Skills",
+    name: "Professional Skills",
     icon: <Briefcase size={20} />,
     skills: [
       { name: "Agile Methodologies", icon: <Briefcase size={16} /> },
+      { name: "Scrum", icon: <Briefcase size={16} /> },
       { name: "UI/UX Design", icon: <Briefcase size={16} /> },
       { name: "Responsive Web Design", icon: <Briefcase size={16} /> },
       { name: "Test-Driven Development", icon: <Briefcase size={16} /> },
+      { name: "Project Management", icon: <Briefcase size={16} /> },
     ]
   }
 ]
