@@ -11,13 +11,13 @@ export const content = {
       title: "Applied Computer Science (BASc)",
       company: "Thomas More University",
       period: "2022 - Present",
-      description: "Learning all things computer science – from programming to network security – and hoping to become the next big thing in tech (or at least land a decent job)."
+      description: "Learning all things computer science \u2013 from programming to network security \u2013 and hoping to become the next big thing in tech (or at least land a decent job)."
     },
     {
       title: "Python Programming Instructor",
       company: "KSOM Mol",
       period: "2021",
-      description: "Taught Python to over 50 high schoolers. They learned the basics of coding, and no computers were harmed in the process."
+      description: "Taught Python to over 100 high schoolers. They learned the basics of coding, and no computers were harmed in the process."
     },
     {
       title: "Degree in IT Management",
@@ -57,7 +57,7 @@ export const content = {
     {
       name: "Web & App",
       skills: ["Angular", "React", "React Native", "Flutter", "Next.js", "Node.js", "Express.js", "RESTful APIs", "HTML5", "CSS3"],
-      note: "I built this website in React, you can view the source here."
+      note: "I built this website in React, TypeScript, TailwindCSS and Vite."
     },
     {
       name: "Databases",
