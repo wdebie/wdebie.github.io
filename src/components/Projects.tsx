@@ -1,29 +1,8 @@
-import { CheckCircle } from "lucide-react"
+import { CheckCircle } from "lucide-react";
+import { content } from "@/content";
 
 export function Projects() {
-  const projects = [
-    {
-      title: "Luminara",
-      period: "2022 - Present",
-      achievements: [
-        "Developed a Python bot with strict typing",
-        "Integrated MariaDB database",
-        "Implemented Docker for development and deployment",
-        "Utilized Poetry for dependency management"
-      ],
-      link: "https://github.com/wlinator/luminara"
-    },
-    {
-      title: "Dementia Task Reminder",
-      period: "2023 - 2024",
-      achievements: [
-        "Created a PHP Laravel web application",
-        "Designed to assist dementia patients with task management",
-        "Collaborated in a 7-person team",
-        "Applied Agile and SCRUM methodologies"
-      ]
-    }
-  ]
+  const { projects } = content;
 
   return (
     <section id="projects" className="py-20 bg-background">
@@ -54,5 +33,5 @@ export function Projects() {
         </div>
       </div>
     </section>
-  )
+  );
 }
