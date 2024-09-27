@@ -8,22 +8,22 @@ export const content = {
   },
   experience: [
     {
-      title: "Student of Applied Computer Science (BASc)",
+      title: "Applied Computer Science (BASc)",
       company: "Thomas More University",
       period: "2022 - Present",
-      description: "Pursuing a Bachelor of Applied Science in Computer Science, focusing on cutting-edge technologies and best practices in software development. The program covers a wide range of topics including programming, software engineering, database management, and network security."
+      description: "Learning all things computer science – from programming to network security – and hoping to become the next big thing in tech (or at least land a decent job)."
     },
     {
       title: "Python Programming Instructor",
       company: "KSOM Mol",
       period: "2021",
-      description: "Taught Python programming to over 50 high-school students during the academic year, helping them understand the fundamentals of programming."
+      description: "Taught Python to over 50 high schoolers. They learned the basics of coding, and no computers were harmed in the process."
     },
     {
       title: "Degree in IT Management",
       company: "Sint-Jan Berchmanscollege",
       period: "2016-2021",
-      description: "Studied IT Management at Sint-Jan Berchmanscollege, focusing on computer networks, system administration, and IT security."
+      description: "Spent two years learning the ins and outs of IT management, including how to fix your WiFi without calling tech support."
     }
   ],
   projects: [
