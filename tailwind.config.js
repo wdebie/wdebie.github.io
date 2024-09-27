@@ -2,8 +2,7 @@
 export default {
     darkMode: 'class', // Enable dark mode with a class
     content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    './src/**/*.{js,ts,jsx,tsx}', // Adjust the paths to your source files
   ],
   theme: {
   	extend: {
