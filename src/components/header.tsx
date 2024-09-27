@@ -5,8 +5,8 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu-utils";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

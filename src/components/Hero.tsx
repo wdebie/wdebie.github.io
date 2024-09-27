@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
-import { content } from "@/content";
+import { content } from "@/lib/content";
 
 export function Hero() {
   const { hero } = content;

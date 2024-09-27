@@ -6,7 +6,7 @@ import { Projects } from './components/Projects'
 import { Skills } from './components/Skills'
 import { Resume } from './components/Resume'
 import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react"
-import { content } from './content'
+import { content } from './lib/content'
 
 function App() {
   const { footer } = content;
