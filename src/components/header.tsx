@@ -5,12 +5,22 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { useState } from 'react'
+import { Menu } from 'lucide-react'
 
 export function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        <NavigationMenu>
+      <div className="container flex h-14 items-center justify-between">
+        <button
+          className="md:hidden p-2 rounded-md hover:bg-muted"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <Menu size={24} />
+        </button>
+        <NavigationMenu className="hidden md:block">
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#hero">
@@ -39,6 +49,19 @@ export function Header() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+        {isMenuOpen && (
+          <div className="absolute top-14 left-0 w-full bg-background border-b md:hidden">
+            <nav className="container py-2">
+              <ul className="space-y-2">
+                <li><a href="#hero" className="block py-2 px-4 hover:bg-muted" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+                <li><a href="#projects" className="block py-2 px-4 hover:bg-muted" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
+                <li><a href="#skills" className="block py-2 px-4 hover:bg-muted" onClick={() => setIsMenuOpen(false)}>Skills</a></li>
+                <li><a href="#experience" className="block py-2 px-4 hover:bg-muted" onClick={() => setIsMenuOpen(false)}>Experience</a></li>
+                <li><a href="#resume" className="block py-2 px-4 hover:bg-muted" onClick={() => setIsMenuOpen(false)}>Resume</a></li>
+              </ul>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   )
