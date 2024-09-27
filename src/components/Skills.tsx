@@ -59,12 +59,10 @@ const skillCategories: SkillCategory[] = [
     icon: <Wrench size={20} />,
     skills: [
       { name: "Git", icon: <Wrench size={16} /> },
-      { name: "GitHub", icon: <Wrench size={16} /> },
-      { name: "VS Code", icon: <Wrench size={16} /> },
       { name: "Docker", icon: <Wrench size={16} /> },
+      { name: "Poetry", icon: <Wrench size={16} /> },
       { name: "AWS", icon: <Wrench size={16} /> },
       { name: "Heroku", icon: <Wrench size={16} /> },
-      { name: "Vercel", icon: <Wrench size={16} /> },
     ]
   },
   {
