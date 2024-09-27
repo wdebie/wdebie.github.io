@@ -1,7 +1,7 @@
 export const content = {
   hero: {
     name: "Willem De Bie",
-    title: "Tech Hobbyist & Student at Thomas More University",
+    title: "Tech Enthusiast & Student at Thomas More University",
     github: "https://github.com/wdebie",
     linkedin: "https://www.linkedin.com/in/willem-de-bie-0703a8301/",
     email: "debiewillem@outlook.com"
