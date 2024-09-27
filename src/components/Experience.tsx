@@ -3,22 +3,22 @@ import { Briefcase, Calendar } from "lucide-react"
 export function Experience() {
   const experiences = [
     {
-      title: "Applied Computer Science BASc Student",
+      title: "Student of Applied Computer Science (BASc)",
       company: "Thomas More University",
       period: "2022 - Present",
       description: "Pursuing a Bachelor of Applied Science in Computer Science, focusing on cutting-edge technologies and best practices in software development. The program covers a wide range of topics including programming, software engineering, database management, and network security."
     },
     {
       title: "Python Programming Instructor",
-      company: "Sint-Jan Berchmanscollege",
+      company: "KSOM Mol",
       period: "2021",
       description: "Taught Python programming to over 50 high-school students during the academic year, helping them understand the fundamentals of programming."
     },
     {
-      title: "CoderDojo Volunteer",
-      company: "CoderDojo Belgium",
-      period: "2016",
-      description: "Volunteered at CoderDojo Belgium, helping young people learn to code and fostering their interest in technology and computer science."
+      title: "Degree in IT Management",
+      company: "Sint-Jan Berchmanscollege",
+      period: "2016-2021",
+      description: "Studied IT Management at Sint-Jan Berchmanscollege, focusing on computer networks, system administration, and IT security."
     }
   ]
 
