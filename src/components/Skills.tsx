@@ -10,6 +10,7 @@ type SkillCategory = {
   name: string
   icon: React.ReactNode
   skills: Skill[]
+  note?: React.ReactNode
 }
 
 const skillCategories: SkillCategory[] = [
@@ -39,7 +40,12 @@ const skillCategories: SkillCategory[] = [
       { name: "RESTful APIs", icon: <Globe size={16} /> },
       { name: "HTML5", icon: <Globe size={16} /> },
       { name: "CSS3", icon: <Globe size={16} /> },
-    ]
+    ],
+    note: (
+      <p className="mt-4 text-sm text-muted-foreground">
+        I built this website in React, you can view the source <a href="https://github.com/wdebie/wdebie.github.io/tree/main" className="text-primary hover:underline">here</a>.
+      </p>
+    )
   },
   {
     name: "Databases",
@@ -104,6 +110,7 @@ function SkillCategory({ category }: { category: SkillCategory }) {
               </li>
             ))}
           </ul>
+          {category.note}
         </div>
       )}
     </div>
