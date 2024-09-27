@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 import { Menu, Sun, Moon } from 'lucide-react';
 import {
   NavigationMenu,
@@ -8,11 +8,15 @@ import {
 } from "@/components/ui/navigation-menu";
 import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu-utils";
 
-export function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+interface HeaderProps {
+  toggleDarkMode: () => void;
+}
 
-  useEffect(() => {
+const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isDarkMode] = React.useState(false);
+
+  React.useEffect(() => {
     const root = document.documentElement;
     if (isDarkMode) {
       root.classList.add('dark');
@@ -20,10 +24,6 @@ export function Header() {
       root.classList.remove('dark');
     }
   }, [isDarkMode]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
 
   const menuItems = [
     { href: "#hero", label: "Home" },
@@ -77,4 +77,6 @@ export function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;
