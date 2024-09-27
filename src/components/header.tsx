@@ -42,6 +42,11 @@ export function Header() {
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#experience">
+                Experience
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#projects">
                 Projects
               </NavigationMenuLink>
@@ -49,11 +54,6 @@ export function Header() {
             <NavigationMenuItem>
               <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#skills">
                 Skills
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#experience">
-                Experience
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
