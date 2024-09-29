@@ -1,6 +1,6 @@
 import { content } from "@/content";
 
-export function Resume() {
+export default function Resume() {
   const { resume } = content;
 
   return (

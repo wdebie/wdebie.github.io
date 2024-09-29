@@ -12,7 +12,7 @@ interface HeaderProps {
   toggleDarkMode: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
+export default function Header({ toggleDarkMode }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isDarkMode] = React.useState(false);
 
@@ -78,5 +78,3 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
     </header>
   );
 };
-
-export default Header;

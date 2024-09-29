@@ -1,7 +1,7 @@
 import { CheckCircle } from "lucide-react";
 import { content } from "@/content";
 
-export function Projects() {
+export default function Projects() {
   const { projects } = content;
 
   return (

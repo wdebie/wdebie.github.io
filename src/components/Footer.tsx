@@ -1,8 +1,7 @@
-import React from 'react';
 import { Github, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import { content } from '../content';
 
-const Footer: React.FC = () => {
+export default function Footer() {
   const { footer } = content;
 
   return (
@@ -50,5 +49,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer;

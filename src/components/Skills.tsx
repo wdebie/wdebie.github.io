@@ -22,7 +22,7 @@ interface SkillCategoryProps {
   };
 }
 
-export function Skills() {
+export default function Skills() {
   const { skills } = content
 
   return (

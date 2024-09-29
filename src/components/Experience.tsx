@@ -2,7 +2,7 @@ import { Briefcase, Calendar } from "lucide-react";
 import { content } from "@/content";
 import { cn } from "@/lib/utils";
 
-export function Experience() {
+export default function Experience() {
   const { experience } = content;
 
   return (

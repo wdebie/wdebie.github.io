@@ -1,7 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { content } from "../content";
 
-export function Hero() {
+export default function Hero() {
   const { hero } = content;
 
   return (

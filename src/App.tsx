@@ -1,11 +1,11 @@
 import './App.css'
 import { useEffect, useState } from 'react';
-import Header from './components/header'
-import { Hero } from './components/Hero'
-import { Experience } from './components/Experience'
-import { Projects } from './components/Projects'
-import { Skills } from './components/Skills'
-import { Resume } from './components/Resume'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Experience from './components/Experience'
+import Projects from './components/Projects'
+import Skills from './components/Skills'
+import Resume from './components/Resume'
 import Footer from './components/Footer';
 
 function App() {
