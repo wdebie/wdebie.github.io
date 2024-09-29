@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96%; /* Light gray background */
-    --foreground: 0 0% 20%; /* Dark gray text */
+    --background: 0 0% 96%;
+    --foreground: 0 0% 20%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -27,25 +27,25 @@
   }
 
   .dark {
-    --background: 220 10% 10%; /* Darker background for more contrast */
-    --foreground: 210 20% 95%; /* Lighter foreground for more contrast */
-    --card: 220 10% 15%; /* Darker card background */
-    --card-foreground: 210 20% 95%; /* Lighter card foreground */
-    --popover: 220 10% 15%; /* Darker popover background */
-    --popover-foreground: 210 20% 95%; /* Lighter popover foreground */
-    --primary: 217.2 91.2% 59.8%; /* Keep primary color the same */
-    --primary-foreground: 222.2 47.4% 11.2%; /* Keep primary foreground the same */
-    --secondary: 217.2 32.6% 17.5%; /* Keep secondary color the same */
-    --secondary-foreground: 210 40% 98%; /* Keep secondary foreground the same */
-    --muted: 217.2 32.6% 17.5%; /* Keep muted color the same */
-    --muted-foreground: 215 20.2% 65.1%; /* Keep muted foreground the same */
-    --accent: 217.2 32.6% 17.5%; /* Keep accent color the same */
-    --accent-foreground: 210 40% 98%; /* Keep accent foreground the same */
-    --destructive: 0 62.8% 30.6%; /* Keep destructive color the same */
-    --destructive-foreground: 210 40% 98%; /* Keep destructive foreground the same */
-    --border: 217.2 32.6% 25%; /* Slightly lighter border */
-    --input: 217.2 32.6% 25%; /* Slightly lighter input */
-    --ring: 224.3 76.3% 48%; /* Keep ring color the same */
+    --background: 220 10% 10%;
+    --foreground: 210 20% 95%;
+    --card: 220 10% 15%;
+    --card-foreground: 210 20% 95%;
+    --popover: 220 10% 15%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 25%;
+    --input: 217.2 32.6% 25%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
@@ -59,10 +59,19 @@
     line-height: 1.5;
   }
   a:hover {
-    color: #551A8B; /* Darker shade for hover states */
+    color: #551A8B;
   }
   a, button {
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  a:hover, button:hover {
+    transform: translateY(-2px);
+  }
+  
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
   }
 }
 
@@ -72,4 +81,16 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  .sticky-header {
+    @apply fixed top-0 left-0 right-0 z-50;
+    backdrop-filter: blur(8px);
+  }
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
 }
