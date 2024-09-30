@@ -36,16 +36,88 @@ export const content = {
         "Implemented Docker for development and deployment",
         "Utilized Poetry for dependency management"
       ],
-      link: "https://github.com/wlinator/luminara"
+      link: "https://github.com/wlinator/luminara",
+      publishedOn: "January 15, 2022",
+      readingTime: "3 minutes",
+      builtWith: ["Python", "MariaDB", "Docker", "Poetry"],
+      category: {
+        subject: "Bot Development",
+        who: "Willem De Bie",
+        what: "A Python bot with database integration",
+        where: "Thomas More University",
+        why: "To automate tasks and learn bot development"
+      },
+      realizations: [
+        "Automated various tasks using the bot",
+        "Enhanced database management skills",
+        "Improved deployment processes with Docker"
+      ],
+      whatIveLearned: [
+        "Advanced Python programming",
+        "Database management",
+        "Containerization with Docker"
+      ]
     },
     {
-      title: "Dementia Task Reminder",
+      title: "MemoryTracker",
       period: "2023 - 2024",
       achievements: [
         "Created a PHP Laravel web application",
         "Designed to assist dementia patients with task management",
         "Collaborated in a 7-person team",
         "Applied Agile and SCRUM methodologies"
+      ],
+      publishedOn: "March 10, 2023",
+      readingTime: "4 minutes",
+      builtWith: ["PHP", "Laravel", "Agile", "SCRUM"],
+      category: {
+        subject: "Healthcare Application",
+        who: "Willem De Bie",
+        what: "A task management app for dementia patients",
+        where: "KSOM Mol",
+        why: "To assist patients and improve their quality of life"
+      },
+      realizations: [
+        "Developed a user-friendly interface",
+        "Enhanced team collaboration skills",
+        "Implemented effective task management features"
+      ],
+      whatIveLearned: [
+        "PHP and Laravel development",
+        "Team collaboration",
+        "Agile and SCRUM methodologies"
+      ]
+    },
+    {
+      title: "Homelab",
+      period: "2024 - Present",
+      achievements: [
+        "Hosted various software including this website",
+        "Utilized Debian, Docker, and Kubernetes",
+        "Implemented a Raspberry Pi-based server"
+      ],
+      link: "https://github.com/wlinator/homelab",
+      publishedOn: "May 01, 2024",
+      readingTime: "1 minute",
+      builtWith: ["Debian", "Docker", "Kubernetes"],
+      category: {
+        subject: "Personal homelab server",
+        who: "Willem De Bie",
+        what: "A Raspberry Pi-based server hosting various services (DietPi OS)",
+        where: "My home",
+        why: "To learn, experiment and self-host services"
+      },
+      realizations: [
+        "Self-hosted a Discord bot",
+        "Created a wiki website using DokuWiki",
+        "Set up a self-hosted Git server",
+        "Hosted various smaller software applications"
+      ],
+      whatIveLearned: [
+        "Linux administration (package management, permissions, system configuration)",
+        "Networking (port forwarding, DNS, reverse proxies)",
+        "Security (firewalls, CloudFlare, HTTPS)",
+        "Troubleshooting (fixing various issues with DietPi)"
       ]
     }
   ],

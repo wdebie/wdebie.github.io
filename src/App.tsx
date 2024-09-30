@@ -1,9 +1,11 @@
 import './App.css'
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
+import ProjectsFull from './components/ProjectsFull'
 import Skills from './components/Skills'
 import Resume from './components/Resume'
 import Footer from './components/Footer';
@@ -29,17 +31,30 @@ function App() {
 	};
 
 	return (
-		<div className={`App ${isDarkMode ? 'dark' : ''}`}>
-			<Header toggleDarkMode={toggleDarkMode} />
-			<main className="flex-grow">
-				<Hero />
-				<Experience />
-				<Projects />
-				<Skills />
-				<Resume />
+		<Router>
+			<div className={`App ${isDarkMode ? 'dark' : ''}`}>
+				<Header toggleDarkMode={toggleDarkMode} />
+				<main className="flex-grow">
+					<Routes>
+						<Route path="/" element={
+							<>
+								<Hero />
+								<Experience />
+								<Projects />
+								<Skills />
+								<Resume />
+							</>
+						} />
+						<Route path="/projects/:projectName" element={
+							<>
+								<ProjectsFull />
+							</>
+						} />
+					</Routes>
 				<Footer />
-			</main>
-		</div>
+				</main>
+			</div>
+		</Router>
 	)
 }
 

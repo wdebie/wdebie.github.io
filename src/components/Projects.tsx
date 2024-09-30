@@ -1,5 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import { content } from "@/content";
+import { Link } from 'react-router-dom';
 
 export default function Projects() {
   const { projects } = content;
@@ -22,10 +23,10 @@ export default function Projects() {
                     </li>
                   ))}
                 </ul>
-                {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
+                {(
+                  <Link to={`/projects/${project.title.toLowerCase()}`} className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
                     View Project
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>
