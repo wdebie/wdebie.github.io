@@ -29,96 +29,48 @@ export const content = {
   projects: [
     {
       title: "Luminara",
-      period: "2022 - Present",
-      achievements: [
-        "Developed a Python bot with strict typing",
-        "Integrated MariaDB database",
-        "Implemented Docker for development and deployment",
-        "Utilized Poetry for dependency management"
-      ],
-      link: "https://github.com/wlinator/luminara",
-      publishedOn: "January 15, 2022",
-      readingTime: "3 minutes",
+      summary: "A fully-featured Discord Python bot with database integration and asynchronous programming. Developed with Python, MariaDB, Docker, and Poetry. Automated various tasks, enhanced database management skills, and improved deployment processes with Docker.",
+      links: {
+        "Invite to Discord": "https://discord.com/oauth2/authorize?client_id=1038050427272429588&permissions=8&scope=bot",
+        "View Source Code": "https://github.com/wlinator/homelab"
+      },
       builtWith: ["Python", "MariaDB", "Docker", "Poetry"],
       category: {
         subject: "Bot Development",
+        period: "2022 - Present",
         who: "Willem De Bie",
         what: "A Python bot with database integration",
         where: "Thomas More University",
-        why: "To automate tasks and learn bot development"
+        why: "To automate various Discord tasks"
       },
-      realizations: [
-        "Automated various tasks using the bot",
-        "Enhanced database management skills",
-        "Improved deployment processes with Docker"
-      ],
-      whatIveLearned: [
-        "Advanced Python programming",
-        "Database management",
-        "Containerization with Docker"
-      ]
+      imageUrl: "/projects/luminara.png"
     },
     {
       title: "MemoryTracker",
-      period: "2023 - 2024",
-      achievements: [
-        "Created a PHP Laravel web application",
-        "Designed to assist dementia patients with task management",
-        "Collaborated in a 7-person team",
-        "Applied Agile and SCRUM methodologies"
-      ],
-      publishedOn: "March 10, 2023",
-      readingTime: "4 minutes",
+      summary: "A PHP Laravel web application designed to assist dementia patients with task management. Created with PHP, Laravel, Agile, and SCRUM methodologies. Developed a user-friendly interface and implemented effective task management features.",
       builtWith: ["PHP", "Laravel", "Agile", "SCRUM"],
       category: {
         subject: "Healthcare Application",
+        period: "2023 - 2024",
         who: "Willem De Bie",
         what: "A task management app for dementia patients",
         where: "KSOM Mol",
         why: "To assist patients and improve their quality of life"
-      },
-      realizations: [
-        "Developed a user-friendly interface",
-        "Enhanced team collaboration skills",
-        "Implemented effective task management features"
-      ],
-      whatIveLearned: [
-        "PHP and Laravel development",
-        "Team collaboration",
-        "Agile and SCRUM methodologies"
-      ]
+      }
     },
     {
       title: "Homelab",
-      period: "2024 - Present",
-      achievements: [
-        "Hosted various software including this website",
-        "Utilized Debian, Docker, and Kubernetes",
-        "Implemented a Raspberry Pi-based server"
-      ],
-      link: "https://github.com/wlinator/homelab",
-      publishedOn: "May 01, 2024",
-      readingTime: "1 minute",
+      summary: "A Raspberry Pi-based server hosting various services including a Discord bot and a wiki website. Utilized Debian, Docker, and Kubernetes. Self-hosted a Discord bot, created a wiki website using DokuWiki, and set up a self-hosted Git server.",
       builtWith: ["Debian", "Docker", "Kubernetes"],
       category: {
         subject: "Personal homelab server",
+        period: "2020 - Present",
         who: "Willem De Bie",
         what: "A Raspberry Pi-based server hosting various services (DietPi OS)",
         where: "My home",
         why: "To learn, experiment and self-host services"
       },
-      realizations: [
-        "Self-hosted a Discord bot",
-        "Created a wiki website using DokuWiki",
-        "Set up a self-hosted Git server",
-        "Hosted various smaller software applications"
-      ],
-      whatIveLearned: [
-        "Linux administration (package management, permissions, system configuration)",
-        "Networking (port forwarding, DNS, reverse proxies)",
-        "Security (firewalls, CloudFlare, HTTPS)",
-        "Troubleshooting (fixing various issues with DietPi)"
-      ]
+      imageUrl: "/projects/homelab.png"
     }
   ],
   skills: [

@@ -58,9 +58,6 @@
     @apply text-base;
     line-height: 1.5;
   }
-  a:hover {
-    color: #551A8B;
-  }
   a, button {
     transition: transform 0.2s ease-in-out;
   }

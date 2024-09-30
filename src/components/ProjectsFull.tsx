@@ -1,25 +1,22 @@
-import { CheckCircle } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { content } from "@/content";
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react'; // Add this import
+import { useEffect } from 'react';
 
 interface Project {
   title: string;
-  period: string;
-  achievements: string[];
-  link?: string;
-  publishedOn: string;
-  readingTime: string;
+  summary: string;
+  links?: { [key: string]: string };
   builtWith: string[];
   category: {
     subject: string;
+    period: string;
     who: string;
     what: string;
     where: string;
     why: string;
   };
-  realizations: string[];
-  whatIveLearned: string[];
+  imageUrl?: string;
 }
 
 export default function ProjectsFull() {
@@ -40,85 +37,48 @@ export default function ProjectsFull() {
   };
 
   return (
-    <section id="projects-full" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <button onClick={handleBackClick} className="mb-4 text-primary hover:underline">
-          &larr; Back to Projects
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-6 max-w-3xl">
+        <button onClick={handleBackClick} className="mb-10 text-primary hover:underline flex items-center">
+          <span className="mr-2">&larr;</span> Back to Projects
         </button>
-        <h1 className="text-4xl font-bold mb-8 text-center">{project.title}</h1>
-        <div className="bg-card text-card-foreground rounded-xl shadow-lg overflow-hidden p-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
-              <table className="w-full mb-6">
-                <tbody>
-                  <tr>
-                    <td className="font-semibold pr-4">Period:</td>
-                    <td>{project.period}</td>
-                  </tr>
-                  <tr>
-                    <td className="font-semibold pr-4">Published On:</td>
-                    <td>{project.publishedOn}</td>
-                  </tr>
-                  <tr>
-                    <td className="font-semibold pr-4">Reading Time:</td>
-                    <td>{project.readingTime}</td>
-                  </tr>
-                </tbody>
-              </table>
-              <h3 className="text-xl font-semibold mb-2">Built With</h3>
-              <ul className="list-disc list-inside mb-6">
-                {project.builtWith.map((tech, index) => (
-                  <li key={index}>{tech}</li>
-                ))}
-              </ul>
-              {project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
-                  View Project
-                </a>
+        <h1 className="text-4xl font-bold mb-10 text-center">{project.title}</h1>
+        <div className="bg-card text-card-foreground rounded-xl shadow-lg overflow-hidden p-10">
+          <div className="space-y-10 text-center">
+            {project.imageUrl && (
+              <img src={project.imageUrl} alt={project.title} className="h-64 object-cover rounded-lg mb-10 mx-auto max-w-full" style={{ width: 'auto' }} />
+            )}
+            <div className="text-center">
+              <p className="text-lg text-muted-foreground mb-6">{project.summary}</p>
+              {project.links && (
+                <div className="mt-6">
+                  {Object.entries(project.links).map(([text, url]) => (
+                    <div key={text} className="mb-2 flex justify-center items-center">
+                      <a href={url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center font-bold text-lg">
+                        {text} <ExternalLink size={16} className="ml-1" />
+                      </a>
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Achievements</h2>
-              <ul className="space-y-2 mb-6">
-                {project.achievements.map((achievement, index) => (
-                  <li key={index} className="flex items-start">
-                    <CheckCircle size={20} className="mr-2 flex-shrink-0 text-primary" />
-                    <span className="text-muted-foreground">{achievement}</span>
-                  </li>
+              <h3 className="text-xl font-semibold mb-6">Built With</h3>
+              <div className="flex flex-wrap justify-center gap-3">
+                {project.builtWith.map((tech, index) => (
+                  <span key={index} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">{tech}</span>
                 ))}
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8">
-            <h2 className="text-2xl font-semibold mb-4">Project Details</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Category</h3>
-                <table className="w-full mb-6">
-                  <tbody>
-                    {Object.entries(project.category).map(([key, value]) => (
-                      <tr key={key}>
-                        <td className="font-semibold pr-4 capitalize">{key}:</td>
-                        <td>{value}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Realizations</h3>
-                <ul className="list-disc list-inside text-muted-foreground mb-6">
-                  {project.realizations.map((realization, index) => (
-                    <li key={index}>{realization}</li>
-                  ))}
-                </ul>
-                <h3 className="text-xl font-semibold mb-2">What I've Learned</h3>
-                <ul className="list-disc list-inside text-muted-foreground">
-                  {project.whatIveLearned.map((learned, index) => (
-                    <li key={index}>{learned}</li>
-                  ))}
-                </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold mb-6">Project Details</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {Object.entries(project.category).map(([key, value]) => (
+                  <div key={key} className="flex flex-col items-start p-4 bg-background rounded-lg shadow-md text-left">
+                    <span className="font-semibold capitalize text-primary mb-2">{key}</span>
+                    <span className="text-muted-foreground">{value}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
