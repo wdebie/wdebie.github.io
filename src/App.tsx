@@ -45,11 +45,7 @@ function App() {
 								<Resume />
 							</>
 						} />
-						<Route path="/projects/:projectName" element={
-							<>
-								<ProjectsFull />
-							</>
-						} />
+						<Route path="/projects/:projectName" element={<ProjectsFull />} />
 					</Routes>
 				<Footer />
 				</main>

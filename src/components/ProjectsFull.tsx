@@ -1,6 +1,7 @@
 import { CheckCircle } from "lucide-react";
 import { content } from "@/content";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react'; // Add this import
 
 interface Project {
   title: string;
@@ -23,15 +24,27 @@ interface Project {
 
 export default function ProjectsFull() {
   const { projectName } = useParams<{ projectName: string }>();
+  const navigate = useNavigate();
   const project = projectName ? content.projects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === projectName) as Project : null;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!project) {
     return <div className="text-center py-20">Project not found</div>;
   }
 
+  const handleBackClick = () => {
+    navigate('/', { state: { scrollToProjects: true } });
+  };
+
   return (
     <section id="projects-full" className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        <button onClick={handleBackClick} className="mb-4 text-primary hover:underline">
+          &larr; Back to Projects
+        </button>
         <h1 className="text-4xl font-bold mb-8 text-center">{project.title}</h1>
         <div className="bg-card text-card-foreground rounded-xl shadow-lg overflow-hidden p-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

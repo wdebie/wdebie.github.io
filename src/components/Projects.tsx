@@ -1,12 +1,21 @@
 import { CheckCircle } from "lucide-react";
 import { content } from "@/content";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 
 export default function Projects() {
   const { projects } = content;
+  const location = useLocation();
+  const projectsRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (location.state && location.state.scrollToProjects && projectsRef.current) {
+      projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location]);
 
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section ref={projectsRef} id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
