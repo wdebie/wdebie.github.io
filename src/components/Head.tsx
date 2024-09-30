@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, Sun, Moon } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -15,6 +16,7 @@ interface HeaderProps {
 export default function Header({ toggleDarkMode }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isDarkMode] = React.useState(false);
+  const location = useLocation();
 
   React.useEffect(() => {
     const root = document.documentElement;
@@ -26,12 +28,22 @@ export default function Header({ toggleDarkMode }: HeaderProps) {
   }, [isDarkMode]);
 
   const menuItems = [
-    { href: "#hero", label: "Home" },
-    { href: "#experience", label: "Experience" },
-    { href: "#projects", label: "Projects" },
-    { href: "#skills", label: "Skills" },
-    { href: "#resume", label: "Resume" },
+    { to: "/#hero", label: "Home" },
+    { to: "/#experience", label: "Experience" },
+    { to: "/#projects", label: "Projects" },
+    { to: "/#skills", label: "Skills" },
+    { to: "/#resume", label: "Resume" },
   ];
+
+  const handleNavClick = (to: string) => {
+    if (location.pathname === '/') {
+      const element = document.querySelector(to.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -46,8 +58,12 @@ export default function Header({ toggleDarkMode }: HeaderProps) {
           <NavigationMenuList>
             {menuItems.map((item, index) => (
               <NavigationMenuItem key={index}>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()} href={item.href}>
-                  {item.label}
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
+                  onClick={() => handleNavClick(item.to)}
+                  asChild
+                >
+                  <Link to={item.to}>{item.label}</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
@@ -65,9 +81,13 @@ export default function Header({ toggleDarkMode }: HeaderProps) {
               <ul className="space-y-2">
                 {menuItems.map((item, index) => (
                   <li key={index}>
-                    <a href={item.href} className="block py-2 px-4 hover:bg-muted" onClick={() => setIsMenuOpen(false)}>
+                    <Link
+                      to={item.to}
+                      className="block py-2 px-4 hover:bg-muted"
+                      onClick={() => handleNavClick(item.to)}
+                    >
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
