@@ -46,19 +46,6 @@ export const content = {
       imageUrl: "/projects/luminara.png"
     },
     {
-      title: "MemoryTracker",
-      summary: "A PHP Laravel web application designed to assist dementia patients with task management. Created with PHP, Laravel, Agile, and SCRUM methodologies. Developed a user-friendly interface and implemented effective task management features.",
-      builtWith: ["PHP", "Laravel", "Agile", "SCRUM"],
-      category: {
-        subject: "Healthcare Application",
-        period: "2023 - 2024",
-        who: "Willem De Bie",
-        what: "A task management app for dementia patients",
-        where: "KSOM Mol",
-        why: "To assist patients and improve their quality of life"
-      }
-    },
-    {
       title: "Homelab",
       summary: "A Raspberry Pi-based server hosting various services including a Discord bot and a wiki website. Utilized Debian, Docker, and Kubernetes. Self-hosted a Discord bot, created a wiki website using DokuWiki, and set up a self-hosted Git server.",
       builtWith: ["Debian", "Docker", "Kubernetes"],

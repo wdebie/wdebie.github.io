@@ -1,4 +1,3 @@
-import { CheckCircle } from "lucide-react";
 import { content } from "@/content";
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
