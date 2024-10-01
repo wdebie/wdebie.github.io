@@ -22,7 +22,8 @@ interface Project {
 export default function ProjectsFull() {
   const { projectName } = useParams<{ projectName: string }>();
   const navigate = useNavigate();
-  const project = projectName ? content.projects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === projectName) as Project : null;
+  // TODO: fix this without using 'as unknown as Project'
+  const project = projectName ? content.projects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === projectName) as unknown as Project : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);

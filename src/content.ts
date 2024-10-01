@@ -48,6 +48,9 @@ export const content = {
     {
       title: "Homelab",
       summary: "A Raspberry Pi-based server hosting various services including a Discord bot and a wiki website. Utilized Debian, Docker, and Kubernetes. Self-hosted a Discord bot, created a wiki website using DokuWiki, and set up a self-hosted Git server.",
+      links: {
+        "View my selfhosted website": "https://git.wlinator.org/",
+      },
       builtWith: ["Debian", "Docker", "Kubernetes"],
       category: {
         subject: "Personal homelab server",
