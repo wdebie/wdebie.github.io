@@ -1,7 +1,7 @@
 import './App.css'
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Head'
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
@@ -33,7 +33,7 @@ function App() {
 	return (
 		<Router>
 			<div className={`App ${isDarkMode ? 'dark' : ''}`}>
-				<Header toggleDarkMode={toggleDarkMode} />
+				<Navbar toggleDarkMode={toggleDarkMode} />
 				<main className="flex-grow">
 					<Routes>
 						<Route path="/" element={

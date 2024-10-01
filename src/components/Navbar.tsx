@@ -1,24 +1,23 @@
-import React from 'react';
-import { Menu, Sun, Moon } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu-utils";
+import { Menu, Sun, Moon } from 'lucide-react';
+import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils";
 
-interface HeaderProps {
+const navLinkStyle = cva(
+  "inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+);
+
+interface NavbarProps {
   toggleDarkMode: () => void;
 }
 
-export default function Header({ toggleDarkMode }: HeaderProps) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isDarkMode] = React.useState(false);
+export default function Navbar({ toggleDarkMode }: NavbarProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const location = useLocation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const root = document.documentElement;
     if (isDarkMode) {
       root.classList.add('dark');
@@ -45,6 +44,11 @@ export default function Header({ toggleDarkMode }: HeaderProps) {
     setIsMenuOpen(false);
   };
 
+  const handleToggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    toggleDarkMode();
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
@@ -54,24 +58,24 @@ export default function Header({ toggleDarkMode }: HeaderProps) {
         >
           <Menu size={24} />
         </button>
-        <NavigationMenu className="hidden md:block">
-          <NavigationMenuList>
+        <nav className="hidden md:block">
+          <ul className="flex space-x-1">
             {menuItems.map((item, index) => (
-              <NavigationMenuItem key={index}>
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
+              <li key={index}>
+                <Link
+                  to={item.to}
+                  className={cn(navLinkStyle())}
                   onClick={() => handleNavClick(item.to)}
-                  asChild
                 >
-                  <Link to={item.to}>{item.label}</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+                  {item.label}
+                </Link>
+              </li>
             ))}
-          </NavigationMenuList>
-        </NavigationMenu>
+          </ul>
+        </nav>
         <button
           className="p-2 rounded-md hover:bg-muted"
-          onClick={toggleDarkMode}
+          onClick={handleToggleDarkMode}
         >
           {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
         </button>
@@ -97,4 +101,4 @@ export default function Header({ toggleDarkMode }: HeaderProps) {
       </div>
     </header>
   );
-};
+}

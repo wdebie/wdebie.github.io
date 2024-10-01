@@ -58,14 +58,16 @@
     @apply text-base;
     line-height: 1.5;
   }
-  a, button {
+  a,
+  button {
     transition: transform 0.2s ease-in-out;
   }
-  
-  a:hover, button:hover {
+
+  a:hover,
+  button:hover {
     transform: translateY(-2px);
   }
-  
+
   :focus-visible {
     outline: 2px solid var(--ring);
     outline-offset: 2px;
@@ -77,7 +79,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 @layer components {
