@@ -19,7 +19,7 @@ interface Project {
   imageUrl?: string;
 }
 
-export default function ProjectsFull() {
+export default function ProjectPage() {
   const { projectName } = useParams<{ projectName: string }>();
   const navigate = useNavigate();
   // TODO: fix this without using 'as unknown as Project'
