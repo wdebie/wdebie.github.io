@@ -3,10 +3,11 @@ import { content } from "@/content";
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
+// Types
 interface Project {
   title: string;
   summary: string;
-  links?: { [key: string]: string };
+  links?: Record<string, string>;
   builtWith: string[];
   category: {
     subject: string;
@@ -19,71 +20,137 @@ interface Project {
   imageUrl?: string;
 }
 
+// Utility functions
+const generateUrlSlug = (title: string): string => 
+  title.toLowerCase().replace(/\s+/g, '-');
+
+const findProjectByUrlSlug = (projects: Project[], urlSlug: string): Project | undefined =>
+  projects.find(p => generateUrlSlug(p.title) === urlSlug);
+
+// Sub-components
+const BackButton = () => {
+  const navigate = useNavigate();
+  
+  return (
+    <button
+      onClick={() => navigate('/', { state: { scrollToProjects: true } })}
+      className="group flex items-center text-primary hover:text-primary/80 transition-colors"
+    >
+      <span className="mr-2 transition-transform group-hover:-translate-x-1">
+        ←
+      </span>
+      Back to Projects
+    </button>
+  );
+};
+
+const ProjectHeader = ({ project }: { project: Project }) => (
+  <div className="space-y-8 text-center">
+    {project.imageUrl && (
+      <img 
+        src={project.imageUrl} 
+        alt={project.title} 
+        className="h-64 object-cover rounded-lg mx-auto"
+        loading="lazy"
+      />
+    )}
+    <div>
+      <p className="text-lg text-muted-foreground">{project.summary}</p>
+      {project.links && (
+        <div className="mt-6 flex flex-wrap gap-4 justify-center">
+          {Object.entries(project.links).map(([text, url]) => (
+            <a
+              key={text}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-primary hover:underline font-medium transition-colors"
+            >
+              {text}
+              <ExternalLink size={16} className="ml-1" />
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+);
+
+const TechStack = ({ technologies }: { technologies: string[] }) => (
+  <div className="space-y-4">
+    <h3 className="text-xl font-semibold">Built With</h3>
+    <div className="flex flex-wrap justify-center gap-3">
+      {technologies.map((tech) => (
+        <span
+          key={tech}
+          className="bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-medium"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+);
+
+const ProjectDetails = ({ category }: { category: Project['category'] }) => (
+  <div className="space-y-6">
+    <h2 className="text-2xl font-semibold">Project Details</h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {Object.entries(category).map(([key, value]) => (
+        <div
+          key={key}
+          className="p-4 bg-card rounded-lg border border-border shadow-sm"
+        >
+          <span className="block font-medium capitalize text-primary mb-1">
+            {key}
+          </span>
+          <span className="text-muted-foreground">{value}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+// Main component
 export default function ProjectPage() {
   const { projectName } = useParams<{ projectName: string }>();
-  const navigate = useNavigate();
-  // TODO: fix this without using 'as unknown as Project'
-  const project = projectName ? content.projects.find(p => p.title.toLowerCase().replace(/\s+/g, '-') === projectName) as unknown as Project : null;
+  const project = projectName 
+    ? findProjectByUrlSlug(content.projects as unknown as Project[], projectName) // Cast content.projects to unknown first
+    : undefined;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   if (!project) {
-    return <div className="text-center py-20">Project not found</div>;
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center">
+        <div className="text-center space-y-4">
+          <h2 className="text-2xl font-semibold">Project Not Found</h2>
+          <BackButton />
+        </div>
+      </div>
+    );
   }
 
-  const handleBackClick = () => {
-    navigate('/', { state: { scrollToProjects: true } });
-  };
-
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-6 max-w-3xl">
-        <button onClick={handleBackClick} className="mb-10 text-primary hover:underline flex items-center">
-          <span className="mr-2">&larr;</span> Back to Projects
-        </button>
-        <h1 className="text-4xl font-bold mb-10 text-center">{project.title}</h1>
-        <div className="bg-card text-card-foreground rounded-xl shadow-lg overflow-hidden p-10">
-          <div className="space-y-10 text-center">
-            {project.imageUrl && (
-              <img src={project.imageUrl} alt={project.title} className="h-64 object-cover rounded-lg mb-10 mx-auto max-w-full" style={{ width: 'auto' }} />
-            )}
-            <div className="text-center">
-              <p className="text-lg text-muted-foreground mb-6">{project.summary}</p>
-              {project.links && (
-                <div className="mt-6">
-                  {Object.entries(project.links).map(([text, url]) => (
-                    <div key={text} className="mb-2 flex justify-center items-center">
-                      <a href={url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline flex items-center font-bold text-lg">
-                        {text} <ExternalLink size={16} className="ml-1" />
-                      </a>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-6">Built With</h3>
-              <div className="flex flex-wrap justify-center gap-3">
-                {project.builtWith.map((tech, index) => (
-                  <span key={index} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">{tech}</span>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold mb-6">Project Details</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {Object.entries(project.category).map(([key, value]) => (
-                  <div key={key} className="flex flex-col items-start p-4 bg-background rounded-lg shadow-md text-left">
-                    <span className="font-semibold capitalize text-primary mb-2">{key}</span>
-                    <span className="text-muted-foreground">{value}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+    <section className="py-16 bg-background min-h-screen">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="mb-10">
+          <BackButton />
         </div>
+        
+        <article className="space-y-12">
+          <h1 className="text-4xl font-bold text-center">
+            {project.title}
+          </h1>
+
+          <div className="bg-card rounded-xl shadow-lg overflow-hidden p-8 space-y-12">
+            <ProjectHeader project={project} />
+            <TechStack technologies={project.builtWith} />
+            <ProjectDetails category={project.category} />
+          </div>
+        </article>
       </div>
     </section>
   );
